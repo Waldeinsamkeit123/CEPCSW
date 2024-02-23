@@ -1,0 +1,243 @@
+INFO: Setup CEPCSW externals: /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/setup-103.0.2.sh
+INFO: Setup CEPCSW: /publicfs/cms/user/wanghan/CEPCSW/InstallArea
+
+
+
+===========================================================
+There was a crash.
+This is the entire stack trace of all threads:
+===========================================================
+#0  0x00002b33b9a2d60c in waitpid () from /lib64/libc.so.6
+#1  0x00002b33b99aaf62 in do_system () from /lib64/libc.so.6
+#2  0x00002b33c4ea1ebc in TUnixSystem::StackTrace() () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libCore.so
+#3  0x00002b33c4e9f5d5 in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libCore.so
+#4  <signal handler called>
+#5  0x00002b33c69a4837 in TStreamerInfo::ForceWriteInfo(TFile*, bool) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libRIO.so
+#6  0x00002b33e396a041 in TTree::BuildStreamerInfo(TClass*, void*, bool) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#7  0x00002b33e391ab8e in TBranchElement::Unroll(char const*, TClass*, TClass*, char*, int, int, int) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#8  0x00002b33e391ef73 in TBranchElement::Init(TTree*, TBranch*, char const*, TVirtualCollectionProxy*, int, int, int) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#9  0x00002b33e391f540 in TBranchElement::TBranchElement(TTree*, char const*, TVirtualCollectionProxy*, int, int, int) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#10 0x00002b33e397b74a in TTree::BronchExec(char const*, char const*, void*, bool, int, int) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#11 0x00002b33e3968511 in TTree::Branch(char const*, char const*, void*, int, int) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#12 0x00002b33d11259b1 in podio::ROOTFrameWriter::initBranches (this=<optimized out>, catInfo=..., collections=..., parameters=...) at /cvmfs/sft.cern.ch/lcg/releases/gcc/11.3.0-ad0f5/x86_64-centos7/include/c++/11.3.0/bits/basic_string.h:194
+#13 0x00002b33d1127450 in podio::ROOTFrameWriter::writeFrame (this=0x233fd510, frame=..., category=..., collsToWrite=...) at /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/podio-v00-17-01/src/ROOTFrameWriter.cc:52
+#14 0x00002b33e5b9c86b in PodioOutput::execute() () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/k4FWCore/lib/libk4FWCorePlugins.so
+#15 0x00002b33e31d1a8f in Gaudi::details::LegacyAlgorithmAdapter::execute(EventContext const&) const () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiSvc.so
+#16 0x00002b33c42be2df in Gaudi::Algorithm::sysExecute(EventContext const&) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiKernel.so
+#17 0x00002b33e6345be4 in GaudiAlgorithm::sysExecute(EventContext const&) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiAlgLib.so
+#18 0x00002b33c43f59f6 in MinimalEventLoopMgr::executeEvent(EventContext&&) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiKernel.so
+#19 0x00002b33c6385610 in EventLoopMgr::executeEvent(EventContext&&) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiCoreSvc.so
+#20 0x00002b33c6385d45 in EventLoopMgr::nextEvent(int) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiCoreSvc.so
+#21 0x00002b33c43f56cd in MinimalEventLoopMgr::executeRun(int) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiKernel.so
+#22 0x00002b33c635a4bb in ApplicationMgr::executeRun(int) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiCoreSvc.so
+#23 0x00002b33c42ef98e in Gaudi::Application::run() () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiKernel.so
+#24 0x00002b33c42f0043 in _py_Gaudi__Application__run () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiKernel.so
+#25 0x00002b33c1060052 in ffi_call_unix64 () from /cvmfs/sft.cern.ch/lcg/views/LCG_103/x86_64-centos7-gcc11-opt/lib64/libffi.so.8
+#26 0x00002b33c105eb55 in ffi_call_int () from /cvmfs/sft.cern.ch/lcg/views/LCG_103/x86_64-centos7-gcc11-opt/lib64/libffi.so.8
+#27 0x00002b33c14a7685 in _call_function_pointer (argtypecount=<optimized out>, argcount=1, resmem=0x7fff2e45ab50, restype=<optimized out>, atypes=<optimized out>, avalues=0x7fff2e45ab40, pProc=0x2b33c42f0020 <_py_Gaudi__Application__run>, flags=4353) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/_ctypes/callproc.c:920
+#28 _ctypes_callproc (pProc=pProc
+entry=0x2b33c42f0020 <_py_Gaudi__Application__run>, argtuple=argtuple
+entry=0x2b33c2d0e970, flags=4353, argtypes=argtypes
+entry=0x2b33c2d0e820, restype=restype
+entry=0x1d30b10, checker=checker
+entry=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/_ctypes/callproc.c:1263
+#29 0x00002b33c14a17b9 in PyCFuncPtr_call (self=<optimized out>, inargs=<optimized out>, kwds=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/_ctypes/_ctypes.c:4201
+#30 0x00002b33b8b145a8 in _PyObject_MakeTpCall (tstate=0x1aaebe0, callable=0x2b33c2d04400, args=<optimized out>, nargs=1, keywords=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Objects/call.c:191
+#31 0x00002b33b8aca209 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=9223372036854775809, args=0x2b33c2cd1d20, callable=0x2b33c2d04400, tstate=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:116
+#32 _PyObject_VectorcallTstate (kwnames=0x0, nargsf=9223372036854775809, args=0x2b33c2cd1d20, callable=0x2b33c2d04400, tstate=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:103
+#33 PyObject_Vectorcall (kwnames=0x0, nargsf=9223372036854775809, args=0x2b33c2cd1d20, callable=0x2b33c2d04400) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:127
+#34 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:5077
+#35 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=<optimized out>, throwflag=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:3489
+#36 0x00002b33b8ac1bab in _PyEval_EvalFrame (throwflag=0, f=0x2b33c2cd1ba0, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/internal/pycore_ceval.h:40
+#37 function_code_fastcall (tstate=0x1aaebe0, co=<optimized out>, args=<optimized out>, nargs=1, globals=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Objects/call.c:330
+#38 0x00002b33b8ac9770 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x1bb47240, callable=0x2b33c147a160, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:118
+#39 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x1bb47240, callable=0x2b33c147a160) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:127
+#40 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:5077
+#41 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=<optimized out>, throwflag=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:3506
+#42 0x00002b33b8ac1bab in _PyEval_EvalFrame (throwflag=0, f=0x1bb47080, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/internal/pycore_ceval.h:40
+#43 function_code_fastcall (tstate=0x1aaebe0, co=<optimized out>, args=<optimized out>, nargs=2, globals=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Objects/call.c:330
+#44 0x00002b33b8ac9770 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x2b33c1749e10, callable=0x2b33c1688f70, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:118
+#45 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x2b33c1749e10, callable=0x2b33c1688f70) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:127
+#46 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:5077
+#47 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=<optimized out>, throwflag=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:3506
+#48 0x00002b33b8bf778e in _PyEval_EvalFrame (throwflag=0, f=0x2b33c1749c80, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/internal/pycore_ceval.h:40
+#49 _PyEval_EvalCode (tstate=tstate
+entry=0x1aaebe0, _co=_co
+entry=0x2b33c14d60e0, globals=<optimized out>, locals=locals
+entry=0x0, args=<optimized out>, argcount=3, kwnames=0x0, kwargs=0x1b430c8, kwcount=0, kwstep=1, defs=0x2b33c14c6da8, defcount=1, kwdefs=0x0, closure=0x0, name=0x2b33b88daab0, qualname=0x2b33c14d72f0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:4329
+#50 0x00002b33b8b14331 in _PyFunction_Vectorcall (func=<optimized out>, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Objects/call.c:396
+#51 0x00002b33b8ac9770 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x1b430b0, callable=0x2b33c1688dc0, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:118
+#52 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x1b430b0, callable=0x2b33c1688dc0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:127
+#53 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:5077
+#54 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=<optimized out>, throwflag=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:3506
+#55 0x00002b33b8bf778e in _PyEval_EvalFrame (throwflag=0, f=0x1b42f40, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/internal/pycore_ceval.h:40
+#56 _PyEval_EvalCode (tstate=0x1aaebe0, _co=_co
+entry=0x2b33c0cb6a80, globals=globals
+entry=0x2b33b8a02e00, locals=locals
+entry=0x2b33b8a02e00, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=0x0, kwargs=0x0, kwcount=0, kwstep=2, defs=0x0, defcount=0, kwdefs=0x0, closure=0x0, name=0x0, qualname=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:4329
+#57 0x00002b33b8bf7ace in _PyEval_EvalCodeWithName (_co=_co
+entry=0x2b33c0cb6a80, globals=globals
+entry=0x2b33b8a02e00, locals=locals
+entry=0x2b33b8a02e00, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0, kwargs=0x0, kwcount=0, kwstep=2, defs=0x0, defcount=0, kwdefs=0x0, closure=0x0, name=0x0, qualname=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:4361
+#58 0x00002b33b8bf7b1b in PyEval_EvalCodeEx (_co=_co
+entry=0x2b33c0cb6a80, globals=globals
+entry=0x2b33b8a02e00, locals=locals
+entry=0x2b33b8a02e00, args=args
+entry=0x0, argcount=argcount
+entry=0, kws=kws
+entry=0x0, kwcount=0, defs=0x0, defcount=0, kwdefs=0x0, closure=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:4377
+#59 0x00002b33b8bf7b4b in PyEval_EvalCode (co=co
+entry=0x2b33c0cb6a80, globals=globals
+entry=0x2b33b8a02e00, locals=locals
+entry=0x2b33b8a02e00) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:828
+#60 0x00002b33b8c37c4e in run_eval_code_obj (locals=0x2b33b8a02e00, globals=0x2b33b8a02e00, co=0x2b33c0cb6a80, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:1221
+#61 run_mod (mod=<optimized out>, filename=filename
+entry=0x2b33b8906ae0, globals=globals
+entry=0x2b33b8a02e00, locals=locals
+entry=0x2b33b8a02e00, flags=flags
+entry=0x7fff2e45b628, arena=arena
+entry=0x2b33b88d7910) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:1242
+#62 0x00002b33b8c39663 in pyrun_file (flags=0x7fff2e45b628, closeit=<optimized out>, locals=0x2b33b8a02e00, globals=0x2b33b8a02e00, start=257, filename=0x2b33b8906ae0, fp=0x1ae8830) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:1140
+#63 pyrun_simple_file (flags=0x7fff2e45b628, closeit=<optimized out>, filename=0x2b33b8906ae0, fp=0x1ae8830) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:450
+#64 PyRun_SimpleFileExFlags (fp=fp
+entry=0x1ae8830, filename=<optimized out>, closeit=closeit
+entry=1, flags=flags
+entry=0x7fff2e45b628) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:483
+#65 0x00002b33b8c39c9c in PyRun_AnyFileExFlags (fp=fp
+entry=0x1ae8830, filename=<optimized out>, closeit=closeit
+entry=1, flags=flags
+entry=0x7fff2e45b628) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:92
+#66 0x00002b33b8c569e8 in pymain_run_file (cf=0x7fff2e45b628, config=0x1a9cd10) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/main.c:373
+#67 pymain_run_python (exitcode=0x7fff2e45b620) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/main.c:598
+#68 Py_RunMain () at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/main.c:677
+#69 0x00002b33b8c56ea7 in pymain_main (args=0x7fff2e45b710) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/main.c:707
+#70 Py_BytesMain (argc=<optimized out>, argv=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/main.c:731
+#71 0x00002b33b998a555 in __libc_start_main () from /lib64/libc.so.6
+#72 0x000000000040108e in _start ()
+===========================================================
+
+
+The lines below might hint at the cause of the crash. If you see question
+marks as part of the stack trace, try to recompile with debugging information
+enabled and export CLING_DEBUG=1 environment variable before running.
+You may get help by asking at the ROOT forum https://root.cern/forum
+Only if you are really convinced it is a bug in ROOT then please submit a
+report at https://root.cern/bugs Please post the ENTIRE stack trace
+from above as an attachment in addition to anything else
+that might help us fixing this issue.
+===========================================================
+#5  0x00002b33c69a4837 in TStreamerInfo::ForceWriteInfo(TFile*, bool) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libRIO.so
+#6  0x00002b33e396a041 in TTree::BuildStreamerInfo(TClass*, void*, bool) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#7  0x00002b33e391ab8e in TBranchElement::Unroll(char const*, TClass*, TClass*, char*, int, int, int) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#8  0x00002b33e391ef73 in TBranchElement::Init(TTree*, TBranch*, char const*, TVirtualCollectionProxy*, int, int, int) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#9  0x00002b33e391f540 in TBranchElement::TBranchElement(TTree*, char const*, TVirtualCollectionProxy*, int, int, int) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#10 0x00002b33e397b74a in TTree::BronchExec(char const*, char const*, void*, bool, int, int) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#11 0x00002b33e3968511 in TTree::Branch(char const*, char const*, void*, int, int) () from /cvmfs/sft.cern.ch/lcg/releases/ROOT/6.28.00-a8528/x86_64-centos7-gcc11-opt/lib/libTree.so
+#12 0x00002b33d11259b1 in podio::ROOTFrameWriter::initBranches (this=<optimized out>, catInfo=..., collections=..., parameters=...) at /cvmfs/sft.cern.ch/lcg/releases/gcc/11.3.0-ad0f5/x86_64-centos7/include/c++/11.3.0/bits/basic_string.h:194
+#13 0x00002b33d1127450 in podio::ROOTFrameWriter::writeFrame (this=0x233fd510, frame=..., category=..., collsToWrite=...) at /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/podio-v00-17-01/src/ROOTFrameWriter.cc:52
+#14 0x00002b33e5b9c86b in PodioOutput::execute() () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/k4FWCore/lib/libk4FWCorePlugins.so
+#15 0x00002b33e31d1a8f in Gaudi::details::LegacyAlgorithmAdapter::execute(EventContext const&) const () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiSvc.so
+#16 0x00002b33c42be2df in Gaudi::Algorithm::sysExecute(EventContext const&) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiKernel.so
+#17 0x00002b33e6345be4 in GaudiAlgorithm::sysExecute(EventContext const&) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiAlgLib.so
+#18 0x00002b33c43f59f6 in MinimalEventLoopMgr::executeEvent(EventContext&&) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiKernel.so
+#19 0x00002b33c6385610 in EventLoopMgr::executeEvent(EventContext&&) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiCoreSvc.so
+#20 0x00002b33c6385d45 in EventLoopMgr::nextEvent(int) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiCoreSvc.so
+#21 0x00002b33c43f56cd in MinimalEventLoopMgr::executeRun(int) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiKernel.so
+#22 0x00002b33c635a4bb in ApplicationMgr::executeRun(int) () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiCoreSvc.so
+#23 0x00002b33c42ef98e in Gaudi::Application::run() () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiKernel.so
+#24 0x00002b33c42f0043 in _py_Gaudi__Application__run () from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/lib/libGaudiKernel.so
+#25 0x00002b33c1060052 in ffi_call_unix64 () from /cvmfs/sft.cern.ch/lcg/views/LCG_103/x86_64-centos7-gcc11-opt/lib64/libffi.so.8
+#26 0x00002b33c105eb55 in ffi_call_int () from /cvmfs/sft.cern.ch/lcg/views/LCG_103/x86_64-centos7-gcc11-opt/lib64/libffi.so.8
+#27 0x00002b33c14a7685 in _call_function_pointer (argtypecount=<optimized out>, argcount=1, resmem=0x7fff2e45ab50, restype=<optimized out>, atypes=<optimized out>, avalues=0x7fff2e45ab40, pProc=0x2b33c42f0020 <_py_Gaudi__Application__run>, flags=4353) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/_ctypes/callproc.c:920
+#28 _ctypes_callproc (pProc=pProc
+entry=0x2b33c42f0020 <_py_Gaudi__Application__run>, argtuple=argtuple
+entry=0x2b33c2d0e970, flags=4353, argtypes=argtypes
+entry=0x2b33c2d0e820, restype=restype
+entry=0x1d30b10, checker=checker
+entry=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/_ctypes/callproc.c:1263
+#29 0x00002b33c14a17b9 in PyCFuncPtr_call (self=<optimized out>, inargs=<optimized out>, kwds=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/_ctypes/_ctypes.c:4201
+#30 0x00002b33b8b145a8 in _PyObject_MakeTpCall (tstate=0x1aaebe0, callable=0x2b33c2d04400, args=<optimized out>, nargs=1, keywords=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Objects/call.c:191
+#31 0x00002b33b8aca209 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=9223372036854775809, args=0x2b33c2cd1d20, callable=0x2b33c2d04400, tstate=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:116
+#32 _PyObject_VectorcallTstate (kwnames=0x0, nargsf=9223372036854775809, args=0x2b33c2cd1d20, callable=0x2b33c2d04400, tstate=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:103
+#33 PyObject_Vectorcall (kwnames=0x0, nargsf=9223372036854775809, args=0x2b33c2cd1d20, callable=0x2b33c2d04400) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:127
+#34 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:5077
+#35 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=<optimized out>, throwflag=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:3489
+#36 0x00002b33b8ac1bab in _PyEval_EvalFrame (throwflag=0, f=0x2b33c2cd1ba0, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/internal/pycore_ceval.h:40
+#37 function_code_fastcall (tstate=0x1aaebe0, co=<optimized out>, args=<optimized out>, nargs=1, globals=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Objects/call.c:330
+#38 0x00002b33b8ac9770 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x1bb47240, callable=0x2b33c147a160, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:118
+#39 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x1bb47240, callable=0x2b33c147a160) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:127
+#40 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:5077
+#41 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=<optimized out>, throwflag=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:3506
+#42 0x00002b33b8ac1bab in _PyEval_EvalFrame (throwflag=0, f=0x1bb47080, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/internal/pycore_ceval.h:40
+#43 function_code_fastcall (tstate=0x1aaebe0, co=<optimized out>, args=<optimized out>, nargs=2, globals=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Objects/call.c:330
+#44 0x00002b33b8ac9770 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x2b33c1749e10, callable=0x2b33c1688f70, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:118
+#45 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x2b33c1749e10, callable=0x2b33c1688f70) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:127
+#46 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:5077
+#47 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=<optimized out>, throwflag=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:3506
+#48 0x00002b33b8bf778e in _PyEval_EvalFrame (throwflag=0, f=0x2b33c1749c80, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/internal/pycore_ceval.h:40
+#49 _PyEval_EvalCode (tstate=tstate
+entry=0x1aaebe0, _co=_co
+entry=0x2b33c14d60e0, globals=<optimized out>, locals=locals
+entry=0x0, args=<optimized out>, argcount=3, kwnames=0x0, kwargs=0x1b430c8, kwcount=0, kwstep=1, defs=0x2b33c14c6da8, defcount=1, kwdefs=0x0, closure=0x0, name=0x2b33b88daab0, qualname=0x2b33c14d72f0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:4329
+#50 0x00002b33b8b14331 in _PyFunction_Vectorcall (func=<optimized out>, stack=<optimized out>, nargsf=<optimized out>, kwnames=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Objects/call.c:396
+#51 0x00002b33b8ac9770 in _PyObject_VectorcallTstate (kwnames=0x0, nargsf=<optimized out>, args=0x1b430b0, callable=0x2b33c1688dc0, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:118
+#52 PyObject_Vectorcall (kwnames=0x0, nargsf=<optimized out>, args=0x1b430b0, callable=0x2b33c1688dc0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/cpython/abstract.h:127
+#53 call_function (kwnames=0x0, oparg=<optimized out>, pp_stack=<synthetic pointer>, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:5077
+#54 _PyEval_EvalFrameDefault (tstate=<optimized out>, f=<optimized out>, throwflag=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:3506
+#55 0x00002b33b8bf778e in _PyEval_EvalFrame (throwflag=0, f=0x1b42f40, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Include/internal/pycore_ceval.h:40
+#56 _PyEval_EvalCode (tstate=0x1aaebe0, _co=_co
+entry=0x2b33c0cb6a80, globals=globals
+entry=0x2b33b8a02e00, locals=locals
+entry=0x2b33b8a02e00, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=0x0, kwargs=0x0, kwcount=0, kwstep=2, defs=0x0, defcount=0, kwdefs=0x0, closure=0x0, name=0x0, qualname=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:4329
+#57 0x00002b33b8bf7ace in _PyEval_EvalCodeWithName (_co=_co
+entry=0x2b33c0cb6a80, globals=globals
+entry=0x2b33b8a02e00, locals=locals
+entry=0x2b33b8a02e00, args=args
+entry=0x0, argcount=argcount
+entry=0, kwnames=kwnames
+entry=0x0, kwargs=0x0, kwcount=0, kwstep=2, defs=0x0, defcount=0, kwdefs=0x0, closure=0x0, name=0x0, qualname=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:4361
+#58 0x00002b33b8bf7b1b in PyEval_EvalCodeEx (_co=_co
+entry=0x2b33c0cb6a80, globals=globals
+entry=0x2b33b8a02e00, locals=locals
+entry=0x2b33b8a02e00, args=args
+entry=0x0, argcount=argcount
+entry=0, kws=kws
+entry=0x0, kwcount=0, defs=0x0, defcount=0, kwdefs=0x0, closure=0x0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:4377
+#59 0x00002b33b8bf7b4b in PyEval_EvalCode (co=co
+entry=0x2b33c0cb6a80, globals=globals
+entry=0x2b33b8a02e00, locals=locals
+entry=0x2b33b8a02e00) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/ceval.c:828
+#60 0x00002b33b8c37c4e in run_eval_code_obj (locals=0x2b33b8a02e00, globals=0x2b33b8a02e00, co=0x2b33c0cb6a80, tstate=0x1aaebe0) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:1221
+#61 run_mod (mod=<optimized out>, filename=filename
+entry=0x2b33b8906ae0, globals=globals
+entry=0x2b33b8a02e00, locals=locals
+entry=0x2b33b8a02e00, flags=flags
+entry=0x7fff2e45b628, arena=arena
+entry=0x2b33b88d7910) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:1242
+#62 0x00002b33b8c39663 in pyrun_file (flags=0x7fff2e45b628, closeit=<optimized out>, locals=0x2b33b8a02e00, globals=0x2b33b8a02e00, start=257, filename=0x2b33b8906ae0, fp=0x1ae8830) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:1140
+#63 pyrun_simple_file (flags=0x7fff2e45b628, closeit=<optimized out>, filename=0x2b33b8906ae0, fp=0x1ae8830) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:450
+#64 PyRun_SimpleFileExFlags (fp=fp
+entry=0x1ae8830, filename=<optimized out>, closeit=closeit
+entry=1, flags=flags
+entry=0x7fff2e45b628) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:483
+#65 0x00002b33b8c39c9c in PyRun_AnyFileExFlags (fp=fp
+entry=0x1ae8830, filename=<optimized out>, closeit=closeit
+entry=1, flags=flags
+entry=0x7fff2e45b628) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Python/pythonrun.c:92
+#66 0x00002b33b8c569e8 in pymain_run_file (cf=0x7fff2e45b628, config=0x1a9cd10) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/main.c:373
+#67 pymain_run_python (exitcode=0x7fff2e45b620) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/main.c:598
+#68 Py_RunMain () at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/main.c:677
+#69 0x00002b33b8c56ea7 in pymain_main (args=0x7fff2e45b710) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/main.c:707
+#70 Py_BytesMain (argc=<optimized out>, argv=<optimized out>) at /build/jenkins/workspace/lcg_release_pipeline/build/externals/Python-3.9.12/src/Python/3.9.12/Modules/main.c:731
+#71 0x00002b33b998a555 in __libc_start_main () from /lib64/libc.so.6
+#72 0x000000000040108e in _start ()
+===========================================================
+
+
