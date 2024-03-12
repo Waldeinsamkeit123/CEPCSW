@@ -1,0 +1,2 @@
+INFO: Setup CEPCSW externals: /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/setup-103.0.2.sh
+./run.sh: line 58: 23511 Bus error               $blddir/run gaudirun.py $*

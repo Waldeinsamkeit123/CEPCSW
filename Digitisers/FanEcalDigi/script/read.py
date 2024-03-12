@@ -4,7 +4,7 @@ import sys
 from Gaudi.Configuration import *
 
 ############## GeomSvc #################
-geometry_option = "/publicfs/cms/user/wanghan/CEPCSW/Detector/DetCRD/compact/Standalone/Standalone-EcalRotCrystal.xml"
+geometry_option = "/afs/ihep.ac.cn/users/h/huangliheng/script/CEPCSW-master/Detector/DetCRD/compact/Standalone/Standalone-EcalRotCrystal.xml"
 #...
 
 #if not os.getenv("DETCRDROOT"):
@@ -26,7 +26,7 @@ geomsvc.compact = geometry_path
 
 ########### k4DataSvc ####################
 from Configurables import k4DataSvc
-podioevent = k4DataSvc("EventDataSvc", input = "/publicfs/cms/user/wanghan/DATA/CEPCSIM/SimSCECal_gpi_21.root")##########################################
+podioevent = k4DataSvc("EventDataSvc", input = "/afs/ihep.ac.cn/users/h/huangliheng/script/Data/SimData/SimSCECal_gpi_21.root")##########################################
 
 
 ########## Podio Input ###################
@@ -53,7 +53,7 @@ EcalDigi.TimeResolution = 0.5        #unit: ns
 EcalDigi.EnergyThreshold = 0.001   #0.1 MeV  0.0001
 EcalDigi.ChargeThresholdFrac = 0.002
 EcalDigi.Debug=0
-EcalDigi.OutFileName = "/publicfs/cms/user/wanghan/DATA/CEPCDIGI/Rec_SCECAL_gpi.root"
+EcalDigi.OutFileName = "/afs/ihep.ac.cn/users/h/huangliheng/script/Data/DigiData/Rec_SCECAL_gpi.root"
 #########################################
 
 

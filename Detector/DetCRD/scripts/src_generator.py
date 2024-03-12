@@ -13,8 +13,8 @@ def generate():
         os.makedirs('./bashes/')
 
 #    En_gam = [1, 2, 5, 10, 15, 20, 25, 30]
-    for index in range(1,11):
-        rndm = '%d'%(index+20)
+    for index in range(1,101):
+        rndm = '%d'%(index+338)
     #    En = '%d'%(index)
 
         lines = []

@@ -22,7 +22,7 @@ from Configurables import RndmGenSvc, HepRndm__Engine_CLHEP__RanluxEngine_ #rand
 rndmengine = HepRndm__Engine_CLHEP__HepJamesRandom_("RndmGenSvc.Engine") # The default engine in Geant4
 rndmengine.SetSingleton = True
 #rndmengine.Seeds = seed
-rndmengine.Seeds = [24]
+rndmengine.Seeds = [342]
 #rndmengine.Seeds = [20]
 
 rndmgensvc = RndmGenSvc("RndmGenSvc")
@@ -54,17 +54,17 @@ from Configurables import SLCIORdr
 from Configurables import HepMCRdr
 from Configurables import GenPrinter
 gun = GtGunTool("GtGunTool")
-gun.Particles = ["gamma","pi-"]
+gun.Particles = ["gamma","gamma"]
 #gun.Particles = ["nu_e"]
 #gun.PositionXs = [0]
 #gun.PositionYs = [0]
 #gun.PositionZs = [0]
-gun.EnergyMins = [5.,10.] # GeV
-gun.EnergyMaxs = [5.,10.] # GeV
+gun.EnergyMins = [1.,1.] # GeV
+gun.EnergyMaxs = [10.,10.] # GeV
 gun.ThetaMins  = [90,90]    # deg
 gun.ThetaMaxs  = [90,90]  # deg
-gun.PhiMins    = [50,100]    # deg pi- 10.09
-gun.PhiMaxs    = [50,100]  # deg
+gun.PhiMins    = [10.302,10.302]    # deg pi- 10.09
+gun.PhiMaxs    = [13.016,13.016]  # deg
 # stdheprdr = StdHepRdr("StdHepRdr")
 # stdheprdr.Input = "/cefs/data/stdhep/CEPC250/2fermions/E250.Pbhabha.e0.p0.whizard195/bhabha.e0.p0.00001.stdhep"
 # lciordr = SLCIORdr("SLCIORdr")
@@ -89,7 +89,7 @@ detsimsvc = DetSimSvc("DetSimSvc")
 
 from Configurables import DetSimAlg
 detsimalg = DetSimAlg("DetSimAlg")
-detsimalg.RandomSeeds = [24]
+detsimalg.RandomSeeds = [342]
 #detsimalg.RandomSeeds = seed
 # detsimalg.VisMacs = ["vis.mac"]
 detsimalg.RunCmds = [
@@ -105,7 +105,7 @@ detsimalg.RootDetElem = "WorldDetElemTool"
 # output
 from Configurables import PodioOutput
 out = PodioOutput("outputalg")
-out.filename = "/publicfs/cms/user/wanghan/DATA/CEPCSIM/SimSCECal_gpi_24.root"
+out.filename = "/publicfs/cms/user/wanghan/DATA/CEPCSIM/10000_dig_10-100mm_1-10GeV/SimSCECal_gpi_10000_dig_10-100mm_1-10GeV_342.root"
 out.outputCommands = ["keep *"]
 
 # ApplicationMgr

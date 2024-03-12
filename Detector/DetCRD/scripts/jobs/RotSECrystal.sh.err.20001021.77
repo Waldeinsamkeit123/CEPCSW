@@ -1,0 +1,13 @@
+INFO: Setup CEPCSW externals: /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/setup-103.0.2.sh
+Info in <TGeoManager::TGeoManager>: Geometry default, Detector Geometry created
+Info in <TGeoManager::SetTopVolume>: Top volume is world_volume. Master volume is world_volume
+Info in <TGeoNavigator::BuildCache>: --- Maximum geometry depth set to 100
+Info in <TGeoManager::CheckGeometry>: Fixing runtime shapes...
+Info in <TGeoManager::CheckGeometry>: ...Nothing to fix
+Info in <TGeoManager::CloseGeometry>: Counting nodes...
+Info in <TGeoManager::Voxelize>: Voxelizing...
+Info in <TGeoManager::CloseGeometry>: Building cache...
+Info in <TGeoManager::CountLevels>: max level = 3, max placements = 1276
+Info in <TGeoManager::CloseGeometry>: 856869 nodes/ 6 volume UID's in Detector Geometry
+Info in <TGeoManager::CloseGeometry>: ----------------modeler ready----------------
+./run.sh: line 58: 256650 Bus error               (core dumped) $blddir/run gaudirun.py $*

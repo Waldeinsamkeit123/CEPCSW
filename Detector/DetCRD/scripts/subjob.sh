@@ -6,7 +6,7 @@ RUNDIR=/publicfs/cms/user/wanghan/CEPCSW/Detector/DetCRD/scripts/jobs
 	RUN=`printf "%s%s" "RotSECrystal" ".sh"`
 	RUN1=runrc.sh
 
-	echo "/afs/ihep.ac.cn/soft/common/sysgroup/hep_job/bin/hep_sub -g cms $RUN -argu \"%{ProcId}\" -n 10" >$RUNDIR/$RUN1
+	echo "/afs/ihep.ac.cn/soft/common/sysgroup/hep_job/bin/hep_sub -g cms $RUN -argu \"%{ProcId}\" -n 100" >$RUNDIR/$RUN1
 #echo "/afs/ihep.ac.cn/soft/common/sysgroup/hep_job/bin/hep_sub -g cms $RUN -argu \"%{ProcId}\" -n 50" >$RUNDIR/$RUN1
 	echo 'jj=1
 # get procid from command line

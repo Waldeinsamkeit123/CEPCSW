@@ -1,0 +1,13 @@
+INFO: Setup CEPCSW externals: /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/setup-103.0.2.sh
+INFO: Setup CEPCSW: /publicfs/cms/user/wanghan/CEPCSW/InstallArea
+Traceback (most recent call last):
+  File "/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/bin/gaudirun.py", line 586, in <module>
+    exec(o, g, l)
+  File "<string>", line 1, in <module>
+  File "/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/bin/gaudirun.py", line 545, in __call__
+    importOptions(arg)
+  File "/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/python/GaudiKernel/ProcessJobOptions.py", line 548, in importOptions
+    optsfile = _find_file(optsfile)
+  File "/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/Gaudi/python/GaudiKernel/ProcessJobOptions.py", line 159, in _find_file
+    raise ParserError("Cannot find '%s' in %s" % (f, path))
+GaudiKernel.ProcessJobOptions.ParserError: Cannot find '/publicfs/cms/user/wanghan/CEPCSW//bashes/Digi-RotCrystal_0981.py' in ['']

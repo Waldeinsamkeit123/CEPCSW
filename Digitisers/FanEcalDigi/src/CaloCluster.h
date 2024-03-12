@@ -22,13 +22,11 @@ public:
   int getClusterID() {return Bars[0].getClusterID(); }
 
   void getEcalpar(){
-
     ifstream file("/afs/ihep.ac.cn/users/z/zhaoxiao/cms/CEPCSW/Digitisers/FanEcalDigi/script/Ecal_Rotated_parameter.txt");
     int i;
     string s;
     string name;
     double value;
-
     for(i=0;getline(file,s);++i){
         istringstream sin(s);
         sin>>name>>value;

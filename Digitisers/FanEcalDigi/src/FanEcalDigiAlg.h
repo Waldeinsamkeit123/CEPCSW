@@ -4,8 +4,6 @@
 #include "k4FWCore/DataHandle.h"
 #include "GaudiAlg/GaudiAlgorithm.h"
 //#include "edm4hep/SimCalorimeterHitConst.h"
-#include "edm4hep/MutableCaloHitContribution.h"
-#include "edm4hep/MutableSimCalorimeterHit.h"
 #include "edm4hep/SimCalorimeterHit.h"
 #include "edm4hep/CalorimeterHit.h"
 #include "edm4hep/CalorimeterHitCollection.h"
@@ -13,17 +11,22 @@
 #include "edm4hep/MCParticleCollection.h"
 #include "edm4hep/MCParticle.h"
 #include "edm4hep/MCRecoCaloAssociationCollection.h"
+#include "edm4hep/MCRecoCaloParticleAssociationCollection.h"
+#include "edm4hep/MutableCaloHitContribution.h"
+#include "edm4hep/MutableSimCalorimeterHit.h"
+#include "edm4hep/CaloHitContributionCollection.h"
 
 #include <DDRec/DetectorData.h>
 #include <DDRec/CellIDPositionConverter.h>
 #include <DD4hep/Segmentations.h> 
 #include "DetInterface/IGeomSvc.h"
+
 #include "CaloBar.h"
-#include "CaloCrossBar.h"
-#include "CaloCrossCluster.h"
+//#include "CaloCrossBar.h"
+//#include "CaloCrossCluster.h"
 #include "CaloStep.h"
 #include "CaloCluster.h"
-#include "SiPM_CaloCluster.h"
+//#include "SiPM_CaloCluster.h"
 #include "TVector3.h"
 #include "TRandom3.h"
 #include "TFile.h"
@@ -55,10 +58,12 @@ public:
    */
   virtual StatusCode finalize() ;
  
-
-	std::vector<edm4hep::MutableSimCalorimeterHit> MergeHits(const edm4hep::SimCalorimeterHitCollection& m_col);
-	edm4hep::MutableSimCalorimeterHit find(edm4hep::SimCalorimeterHitCollection& m_col, dd4hep::Position& pos);
+	StatusCode MergeHits(const edm4hep::SimCalorimeterHitCollection& m_col, std::vector<edm4hep::SimCalorimeterHit>& m_hits);
+//	edm4hep::MutableSimCalorimeterHit find(edm4hep::MutableSimCalorimeterHit& m_col, dd4hep::Position& pos);
 	edm4hep::MutableSimCalorimeterHit find(std::vector<edm4hep::MutableSimCalorimeterHit>& m_col, unsigned long long& cellid);
+
+  StatusCode HitClassification(const edm4hep::SimCalorimeterHitCollection& m_col, std::map<std::tuple<int, double, double, double, double>, std::vector<edm4hep::SimCalorimeterHit>>& HitCollectionMap);
+  StatusCode MergeSameParticleHits(const std::map<std::tuple<int, double, double, double, double>, std::vector<edm4hep::SimCalorimeterHit>>& hitsToMerge, std::map<std::tuple<int, double, double, double, double>, std::vector<edm4hep::SimCalorimeterHit>>& mergedHits);
 
   StatusCode NeighborClustering(std::vector<CaloBar>& m_barVec, std::vector<CaloCluster>& m_clusVec ); 
   StatusCode ToCrossCluster(vector<CaloCrossBar>& m_bars, CaloCrossCluster& m_cross_clus);
@@ -78,6 +83,7 @@ protected:
   SmartIF<IGeomSvc> m_geosvc;
   typedef std::vector<float> FloatVec;
   typedef std::vector<int> IntVec;
+  typedef std::map<const edm4hep::MCParticle, float> MCParticleToEnergyWeightMap;
 
 	int _nEvt ;
 	int recEvt;
@@ -89,10 +95,11 @@ protected:
 	TTree* t_SimBar;
 	TTree* t_ClusBar;
 	TTree* t_MCdata;
-	TTree* t_oddClusBar;
-	TTree* t_evnClusBar;
-	TTree* t_evtClusBar;
-	TTree* t_RecCrossClus;
+  TTree* t_MCHitInfo;
+  TTree* t_oddClusBar;
+  TTree* t_evnClusBar;
+  TTree* t_evtClusBar;
+  TTree* t_RecCrossClus;
   TTree* t_RecClus;
 //  TTree* t_OddClus;
 //  TTree* t_EvnClus; 
@@ -100,25 +107,23 @@ protected:
   TTree* t_CrossClus;
   TTree* t_CrossClusBar;
 	
+  FloatVec m_MChit_primary_x, m_MChit_primary_y, m_MChit_primary_z, m_MChit_crystal, m_MChit_module, m_MChit_x, m_MChit_y, m_MChit_z, m_MChit_E, m_MChit_shower_pdg, m_MChit_primary_E, m_MChit_primary_pdg;	
 	FloatVec m_step_x, m_step_y, m_step_z, m_step_E, m_step_T1, m_step_T2, m_stepBar_x, m_stepBar_y, m_stepBar_z;
 	FloatVec m_simBar_x, m_simBar_y, m_simBar_z, m_simBar_T1, m_simBar_T2, m_simBar_Q1, m_simBar_Q2, m_simBar_crystal, m_simBar_module;
 	IntVec m_simBar_id;
 
 	//==============bars in cluster====================
-	FloatVec m_clusBar_x, m_clusBar_y, m_clusBar_z, m_clusBar_NR, m_clusBar_Nphi,m_clusBar_NE, m_clusBar_Nz, m_clusBar_T1, m_clusBar_T2, m_clusBar_Q1, m_clusBar_Q2, m_clusBar_crystal, m_clusBar_module;
+	FloatVec m_clusBar_x, m_clusBar_y, m_clusBar_z, m_clusBar_NR, m_clusBar_Nphi,m_clusBar_NE, m_clusBar_Nz, m_clusBar_T1, m_clusBar_T2, m_clusBar_Q1, m_clusBar_Q2, m_clusBar_crystal, m_clusBar_module, m_Photon_E_MC;
         IntVec m_nclusBar, m_ncrossBar;
 
 	FloatVec m_oclusBar_Q1, m_oclusBar_Q2, m_oclusBar_module, m_oclusBar_crystal, m_eclusBar_Q1, m_eclusBar_Q2, m_eclusBar_module, m_eclusBar_crystal, m_evt_clusBar_Q1, m_evt_clusBar_Q2, m_evt_clusBar_module, m_evt_clusBar_crystal;
 	IntVec m_oclusBar_index, m_eclusBar_index, m_evt_clusBar_index;
 
-  
+  FloatVec m_MCP_pdg, m_MCP_charge, m_MCP_endpoint_x, m_MCP_endpoint_y, m_MCP_endpoint_z, m_MCP_module, m_MCP_crystal; 
   int m_Ncluster;
   FloatVec m_SiPMclus_id, m_SiPMclus_E, m_SiPMclus_RStart, m_SiPMclus_aveR,  m_SiPMclus_Z, m_SiPMclus_avephi,m_SiPMclus_Ephi, m_clus_phi, m_clus_Z,m_clus_aphi,m_clus_aphi_E,m_clus_cid, m_clus_cR_start, m_clus_cR, m_clus_cphi,m_clus_cavephi, m_clus_cEphi, m_clus_cE, m_clus_cZ, m_clus_E, m_clus_phi_start,m_clus_chi2,m_clus_alpha,m_clus_beta,m_MCendpoint_x,m_MCendpoint_R,m_MCendpoint_theta,m_MCendpoint_phi,m_MCendpoint_y,m_MCendpoint_z,m_MCmomentum,m_MCmomentum_x,m_MCmomentum_y,m_MCmomentum_z;
   IntVec m_clus_Nbars,m_clus_id, m_odd_clus_index, m_evn_clus_index, m_evt_clus_index, m_cross_clus_index, m_cross_clus_bar_index;
 
-  FloatVec m_odd_clus_Z,m_odd_clus_aphi,m_odd_clus_aphi_E,m_odd_clus_E, m_evn_clus_Z,m_evn_clus_aphi,m_evn_clus_aphi_E,m_evn_clus_E, m_evt_clus_Z,m_evt_clus_aphi,m_evt_clus_aphi_E,m_evt_clus_E,m_evt_clus_R,m_evt_clus_R_start;
-
-  FloatVec m_cross_clus_E, m_cross_clus_aphi, m_cross_clus_aphi_E, m_cross_clus_Z, m_cross_clus_R, m_cross_clus_bar_E, m_cross_clus_bar_R, m_cross_clus_bar_Z, m_cross_clus_bar_phi, m_rec_cross_R, m_rec_cross_aphi, m_rec_cross_aphi_E;
 
 	dd4hep::rec::CellIDPositionConverter* m_cellIDConverter;
 	dd4hep::DDSegmentation::BitFieldCoder* m_decoder;
@@ -126,18 +131,20 @@ protected:
 	Gaudi::Property<float> m_scale{ this, "Scale", 1 };
 
   // Input collections
-  DataHandle<edm4hep::MCParticleCollection> m_mcParCol{"MCParticleG4", Gaudi::DataHandle::Reader, this};//add
+  DataHandle<edm4hep::MCParticleCollection> m_mcParCol{"MCParticle", Gaudi::DataHandle::Reader, this};//add
   DataHandle<edm4hep::SimCalorimeterHitCollection> r_SimCaloCol{"SimCaloCol", Gaudi::DataHandle::Reader, this};
-  mutable Gaudi::Property<std::string> _readout{this, "ReadOutName", "EcalBarrelCollection", "Readout name"};
-  
-  mutable Gaudi::Property<std::string> _readoutMC{this, "ReadOutNameMC", "MCParticleG4", "Readout name"};//add
+  // DataHandle<edm4hep::CaloHitContributionCollection> r_CaloContCol{"CaloContCol", Gaudi::DataHandle::Reader, this};
+
+  mutable Gaudi::Property<std::string> _readoutName{this, "ReadOutName", "CaloHitsCollection", "Readout name"};
+  mutable Gaudi::Property<int>   _writeNtuple{this,  "WriteNtuple", 1, "Write ntuple"}; 
+//  mutable Gaudi::Property<std::string> _readoutMC{this, "ReadOutNameMC", "MCParticle", "Readout name"};//add
   mutable Gaudi::Property<std::string> _filename{this, "OutFileName", "testout.root", "Output file name"};
   mutable Gaudi::Property<int>   _Nskip{this,  "SkipEvt", 0, "Skip event"};
   mutable Gaudi::Property<float> _seed{this,   "Seed", 2131, "Random Seed"};
   mutable Gaudi::Property<int>  _Debug{this,   "Debug", 0, "Debug level"};
   mutable Gaudi::Property<float> _Eth {this,   "EnergyThreshold", 0.001, "Energy Threshold (/GeV)"};
   mutable Gaudi::Property<float> r_cali{this,  "CalibrECAL", 1, "Calibration coefficients for ECAL"};
-  mutable Gaudi::Property<float> Lbar{this, 	"CrystalBarLength", 262, "Crystal Bar Length(mm)"};
+  mutable Gaudi::Property<float> Lbar{this, 	"CrystalBarLength", 312, "Crystal Bar Length(mm)"};
   mutable Gaudi::Property<float> Latt{this, 	"AttenuationLength", 7000, "Crystal Attenuation Length(mm)"};
   mutable Gaudi::Property<float> Tres{this, 	"TimeResolution", 0.1, "Crystal time resolution in one side (ns)"};
   mutable Gaudi::Property<float> nMat{this, 	"MatRefractive", 2.15, "Material refractive index of crystal"};
@@ -156,8 +163,8 @@ protected:
 
   // Output collections
   DataHandle<edm4hep::CalorimeterHitCollection>    w_DigiCaloCol{"DigiCaloCol", Gaudi::DataHandle::Writer, this};
-  DataHandle<edm4hep::SimCalorimeterHitCollection>    w_SimCaloTruth{"SimCaloCol", Gaudi::DataHandle::Writer, this};
-  DataHandle<edm4hep::MCRecoCaloAssociationCollection>    w_CaloAssociationCol{"MCRecoCaloAssociationCollection", Gaudi::DataHandle::Writer, this};
+  DataHandle<edm4hep::MCRecoCaloAssociationCollection>    w_CaloAssociationCol{"ECALBarrelAssoCol", Gaudi::DataHandle::Writer, this};
+  DataHandle<edm4hep::MCRecoCaloParticleAssociationCollection>    w_MCPCaloAssociationCol{"ECALBarrelParticleAssoCol", Gaudi::DataHandle::Writer, this};
 };
 
 #endif

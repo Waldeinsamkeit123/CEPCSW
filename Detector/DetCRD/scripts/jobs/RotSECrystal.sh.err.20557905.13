@@ -1,0 +1,296 @@
+INFO: Setup CEPCSW externals: /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/setup-103.0.2.sh
+INFO: Setup CEPCSW: /publicfs/cms/user/wanghan/CEPCSW/InstallArea
+libedm4hepDict dictionary payload:187:10: fatal error: cannot open file '/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Vector3f.h': Input/output error
+#include "edm4hep/Vector3f.h"
+         ^
+In file included from libedm4hepDict dictionary payload:394:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/EventHeader.h:91:15: error: redefinition of 'swap'
+  friend void swap(EventHeader& a, EventHeader& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/EventHeader.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:1275:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCParticle.h:162:15: error: redefinition of 'swap'
+  friend void swap(MCParticle& a, MCParticle& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCParticle.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:2393:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimTrackerHit.h:119:15: error: redefinition of 'swap'
+  friend void swap(SimTrackerHit& a, SimTrackerHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimTrackerHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:3367:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CaloHitContribution.h:99:15: error: redefinition of 'swap'
+  friend void swap(CaloHitContribution& a, CaloHitContribution& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CaloHitContribution.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:4276:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimCalorimeterHit.h:97:15: error: redefinition of 'swap'
+  friend void swap(SimCalorimeterHit& a, SimCalorimeterHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimCalorimeterHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:5182:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawCalorimeterHit.h:88:15: error: redefinition of 'swap'
+  friend void swap(RawCalorimeterHit& a, RawCalorimeterHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawCalorimeterHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:6051:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CalorimeterHit.h:98:15: error: redefinition of 'swap'
+  friend void swap(CalorimeterHit& a, CalorimeterHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CalorimeterHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:6961:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ParticleID.h:98:15: error: redefinition of 'swap'
+  friend void swap(ParticleID& a, ParticleID& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ParticleID.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:7870:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Cluster.h:135:15: error: redefinition of 'swap'
+  friend void swap(Cluster& a, Cluster& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Cluster.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:8922:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHit.h:114:15: error: redefinition of 'swap'
+  friend void swap(TrackerHit& a, TrackerHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:9895:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHitPlane.h:127:15: error: redefinition of 'swap'
+  friend void swap(TrackerHitPlane& a, TrackerHitPlane& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHitPlane.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:10923:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawTimeSeries.h:101:15: error: redefinition of 'swap'
+  friend void swap(RawTimeSeries& a, RawTimeSeries& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawTimeSeries.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:11844:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Track.h:127:15: error: redefinition of 'swap'
+  friend void swap(Track& a, Track& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Track.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:12859:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Vertex.h:114:15: error: redefinition of 'swap'
+  friend void swap(Vertex& a, Vertex& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Vertex.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:12862:
+In file included from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/VertexCollectionData.h:9:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ReconstructedParticle.h:144:15: error: redefinition of 'swap'
+  friend void swap(ReconstructedParticle& a, ReconstructedParticle& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ReconstructedParticle.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:14909:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoParticleAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoParticleAssociation& a, MCRecoParticleAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoParticleAssociation.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:15788:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoCaloAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoCaloAssociation& a, MCRecoCaloAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoCaloAssociation.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:16667:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoTrackerAssociation& a, MCRecoTrackerAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerAssociation.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:17546:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerHitPlaneAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoTrackerHitPlaneAssociation& a, MCRecoTrackerHitPlaneAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerHitPlaneAssociation.h: note: previous definition is here
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+In file included from libedm4hepDict dictionary payload:394:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/EventHeader.h:91:15: error: redefinition of 'swap'
+  friend void swap(EventHeader& a, EventHeader& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/EventHeader.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:1275:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCParticle.h:162:15: error: redefinition of 'swap'
+  friend void swap(MCParticle& a, MCParticle& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCParticle.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:2393:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimTrackerHit.h:119:15: error: redefinition of 'swap'
+  friend void swap(SimTrackerHit& a, SimTrackerHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimTrackerHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:3367:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CaloHitContribution.h:99:15: error: redefinition of 'swap'
+  friend void swap(CaloHitContribution& a, CaloHitContribution& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CaloHitContribution.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:4276:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimCalorimeterHit.h:97:15: error: redefinition of 'swap'
+  friend void swap(SimCalorimeterHit& a, SimCalorimeterHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimCalorimeterHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:5182:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawCalorimeterHit.h:88:15: error: redefinition of 'swap'
+  friend void swap(RawCalorimeterHit& a, RawCalorimeterHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawCalorimeterHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:6051:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CalorimeterHit.h:98:15: error: redefinition of 'swap'
+  friend void swap(CalorimeterHit& a, CalorimeterHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CalorimeterHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:6961:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ParticleID.h:98:15: error: redefinition of 'swap'
+  friend void swap(ParticleID& a, ParticleID& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ParticleID.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:7870:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Cluster.h:135:15: error: redefinition of 'swap'
+  friend void swap(Cluster& a, Cluster& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Cluster.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:8922:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHit.h:114:15: error: redefinition of 'swap'
+  friend void swap(TrackerHit& a, TrackerHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:9895:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHitPlane.h:127:15: error: redefinition of 'swap'
+  friend void swap(TrackerHitPlane& a, TrackerHitPlane& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHitPlane.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:10923:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawTimeSeries.h:101:15: error: redefinition of 'swap'
+  friend void swap(RawTimeSeries& a, RawTimeSeries& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawTimeSeries.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:11844:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Track.h:127:15: error: redefinition of 'swap'
+  friend void swap(Track& a, Track& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Track.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:12859:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Vertex.h:114:15: error: redefinition of 'swap'
+  friend void swap(Vertex& a, Vertex& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Vertex.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:12862:
+In file included from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/VertexCollectionData.h:9:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ReconstructedParticle.h:144:15: error: redefinition of 'swap'
+  friend void swap(ReconstructedParticle& a, ReconstructedParticle& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ReconstructedParticle.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:14909:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoParticleAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoParticleAssociation& a, MCRecoParticleAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoParticleAssociation.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:15788:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoCaloAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoCaloAssociation& a, MCRecoCaloAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoCaloAssociation.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:16667:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoTrackerAssociation& a, MCRecoTrackerAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerAssociation.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:17546:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerHitPlaneAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoTrackerHitPlaneAssociation& a, MCRecoTrackerHitPlaneAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerHitPlaneAssociation.h: note: previous definition is here
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+In file included from libedm4hepDict dictionary payload:394:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/EventHeader.h:91:15: error: redefinition of 'swap'
+  friend void swap(EventHeader& a, EventHeader& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/EventHeader.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:1275:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCParticle.h:162:15: error: redefinition of 'swap'
+  friend void swap(MCParticle& a, MCParticle& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCParticle.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:2393:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimTrackerHit.h:119:15: error: redefinition of 'swap'
+  friend void swap(SimTrackerHit& a, SimTrackerHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimTrackerHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:3367:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CaloHitContribution.h:99:15: error: redefinition of 'swap'
+  friend void swap(CaloHitContribution& a, CaloHitContribution& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CaloHitContribution.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:4276:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimCalorimeterHit.h:97:15: error: redefinition of 'swap'
+  friend void swap(SimCalorimeterHit& a, SimCalorimeterHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/SimCalorimeterHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:5182:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawCalorimeterHit.h:88:15: error: redefinition of 'swap'
+  friend void swap(RawCalorimeterHit& a, RawCalorimeterHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawCalorimeterHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:6051:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CalorimeterHit.h:98:15: error: redefinition of 'swap'
+  friend void swap(CalorimeterHit& a, CalorimeterHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/CalorimeterHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:6961:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ParticleID.h:98:15: error: redefinition of 'swap'
+  friend void swap(ParticleID& a, ParticleID& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ParticleID.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:7870:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Cluster.h:135:15: error: redefinition of 'swap'
+  friend void swap(Cluster& a, Cluster& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Cluster.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:8922:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHit.h:114:15: error: redefinition of 'swap'
+  friend void swap(TrackerHit& a, TrackerHit& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHit.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:9895:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHitPlane.h:127:15: error: redefinition of 'swap'
+  friend void swap(TrackerHitPlane& a, TrackerHitPlane& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/TrackerHitPlane.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:10923:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawTimeSeries.h:101:15: error: redefinition of 'swap'
+  friend void swap(RawTimeSeries& a, RawTimeSeries& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/RawTimeSeries.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:11844:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Track.h:127:15: error: redefinition of 'swap'
+  friend void swap(Track& a, Track& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Track.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:12859:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Vertex.h:114:15: error: redefinition of 'swap'
+  friend void swap(Vertex& a, Vertex& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/Vertex.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:12862:
+In file included from /cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/VertexCollectionData.h:9:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ReconstructedParticle.h:144:15: error: redefinition of 'swap'
+  friend void swap(ReconstructedParticle& a, ReconstructedParticle& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/ReconstructedParticle.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:14909:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoParticleAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoParticleAssociation& a, MCRecoParticleAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoParticleAssociation.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:15788:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoCaloAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoCaloAssociation& a, MCRecoCaloAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoCaloAssociation.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:16667:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoTrackerAssociation& a, MCRecoTrackerAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerAssociation.h: note: previous definition is here
+In file included from libedm4hepDict dictionary payload:17546:
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerHitPlaneAssociation.h:92:15: error: redefinition of 'swap'
+  friend void swap(MCRecoTrackerHitPlaneAssociation& a, MCRecoTrackerHitPlaneAssociation& b) {
+              ^
+/cvmfs/cepcsw.ihep.ac.cn/prototype/releases/externals/103.0.2/EDM4hep/include/edm4hep/MCRecoTrackerHitPlaneAssociation.h: note: previous definition is here
+fatal error: too many errors emitted, stopping now [-ferror-limit=]

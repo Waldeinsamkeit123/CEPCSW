@@ -1,4 +1,4 @@
-#Thu Feb 22 21:09:26 2024"""Automatically generated. DO NOT EDIT please"""
+#Tue Mar 12 15:35:18 2024"""Automatically generated. DO NOT EDIT please"""
 import sys
 if sys.version_info >= (3,):
     # Python 2 compatibility
@@ -37,24 +37,24 @@ class FanEcalDigiAlg( ConfigurableAlgorithm ) :
     'VetoObjects' : [  ], # list
     'RequireObjects' : [  ], # list
     'Scale' : 1.00000, # float
-    'ReadOutName' : 'EcalBarrelCollection', # str
-    'ReadOutNameMC' : 'MCParticleG4', # str
+    'ReadOutName' : 'CaloHitsCollection', # str
+    'WriteNtuple' : 1, # int
     'OutFileName' : 'testout.root', # str
     'SkipEvt' : 0, # int
     'Seed' : 2131.00, # float
     'Debug' : 0, # int
     'EnergyThreshold' : 0.00100000, # float
     'CalibrECAL' : 1.00000, # float
-    'CrystalBarLength' : 262.000, # float
+    'CrystalBarLength' : 312.000, # float
     'AttenuationLength' : 7000.00, # float
     'TimeResolution' : 0.100000, # float
     'MatRefractive' : 2.15000, # float
     'InitalTime' : 2.00000, # float
     'ChargeThresholdFrac' : 0.0500000, # float
     'SimCaloHitCollection' : DataHandle('SimCaloCol', 'R', 'DataWrapper<edm4hep::SimCalorimeterHitCollection>'), # DataHandle
-    'MCParticleCol' : DataHandle('MCParticleG4', 'R', 'DataWrapper<edm4hep::MCParticleCollection>'), # DataHandle
     'CaloHitCollection' : DataHandle('DigiCaloCol', 'W', 'DataWrapper<edm4hep::CalorimeterHitCollection>'), # DataHandle
-    'CaloAssociationCollection' : DataHandle('MCRecoCaloAssociationCollection', 'W', 'DataWrapper<edm4hep::MCRecoCaloAssociationCollection>'), # DataHandle
+    'CaloAssociationCollection' : DataHandle('ECALBarrelAssoCol', 'W', 'DataWrapper<edm4hep::MCRecoCaloAssociationCollection>'), # DataHandle
+    'CaloMCPAssociationCollection' : DataHandle('ECALBarrelParticleAssoCol', 'W', 'DataWrapper<edm4hep::MCRecoCaloParticleAssociationCollection>'), # DataHandle
   }
   _propertyDocDct = { 
     'ExtraInputs' : """  [DataHandleHolderBase<PropertyHolder<CommonMessaging<implements<IAlgorithm,IDataHandleHolder,IProperty,IStateful> > > >] """,
@@ -87,7 +87,7 @@ class FanEcalDigiAlg( ConfigurableAlgorithm ) :
     'RequireObjects' : """ execute only if one or more of these TES objects exist [GaudiAlgorithm] """,
     'Scale' : """  [FanEcalDigiAlg] """,
     'ReadOutName' : """ Readout name [FanEcalDigiAlg] """,
-    'ReadOutNameMC' : """ Readout name [FanEcalDigiAlg] """,
+    'WriteNtuple' : """ Write ntuple [FanEcalDigiAlg] """,
     'OutFileName' : """ Output file name [FanEcalDigiAlg] """,
     'SkipEvt' : """ Skip event [FanEcalDigiAlg] """,
     'Seed' : """ Random Seed [FanEcalDigiAlg] """,
@@ -101,9 +101,9 @@ class FanEcalDigiAlg( ConfigurableAlgorithm ) :
     'InitalTime' : """ Start time (ns) [FanEcalDigiAlg] """,
     'ChargeThresholdFrac' : """ Charge threshold fraction [FanEcalDigiAlg] """,
     'SimCaloHitCollection' : """ Handle of the Input SimCaloHit collection [unknown owner type] """,
-    'MCParticleCol' : """ MCParticle collection (input) [unknown owner type] """,
     'CaloHitCollection' : """ Handle of Digi CaloHit collection [unknown owner type] """,
     'CaloAssociationCollection' : """ Handle of CaloAssociation collection [unknown owner type] """,
+    'CaloMCPAssociationCollection' : """ Handle of CaloAssociation collection [unknown owner type] """,
   }
   __declaration_location__ = 'FanEcalDigiAlg.cpp:35'
   def __init__(self, name = Configurable.DefaultName, **kwargs):
